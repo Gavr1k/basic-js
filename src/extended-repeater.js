@@ -1,11 +1,11 @@
 const CustomError = require("../extensions/custom-error");
 
 module.exports = function repeater(str, options) {
-  resultArr = [];
+  result_arr = [];
 
     for(let i = 0; i < (options.repeatTimes || 1); i++) 
     {
-        resultArr[i] = String(str);
+        result_arr[i] = String(str);
         if(options.hasOwnProperty('addition')) 
         {
             additionArr = [];
@@ -13,11 +13,10 @@ module.exports = function repeater(str, options) {
             {
                 additionArr[j] = String(options.addition);
             }
-            resultArr[i] += additionArr.join(options.additionSeparator || '|');
+            result_arr[i] += additionArr.join(options.additionSeparator || '|');
         }
     }
     
     return resultArr.join(options.separator || "+");
-};
 };
   
